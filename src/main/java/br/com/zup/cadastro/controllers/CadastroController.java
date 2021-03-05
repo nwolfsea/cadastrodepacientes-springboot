@@ -25,4 +25,9 @@ public class CadastroController {
         return cadastroService.getCadastros();
     }
 
+    @GetMapping("{nome}/")
+    public Cadastro pesquisarCadastroPeloNome(@PathVariable String nome){
+      return cadastroService.pesquisarCadastro(nome);
+    }
+
 }

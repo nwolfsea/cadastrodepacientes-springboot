@@ -18,4 +18,12 @@ public class CadastroService {
         return cadastros;
     }
 
+    public Cadastro pesquisarCadastro (String nome){
+        for (Cadastro cadastro : cadastros) {
+            if(nome.equals(cadastro.getNome())){
+               return cadastro;
+            }
+        }
+        return null;
+    }
 }
