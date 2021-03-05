@@ -1,4 +1,4 @@
-package br.com.zup.cadastro.models;
+package br.com.zup.cadastro.enuns;
 
 public enum TipoConsulta {
     CARDIO,

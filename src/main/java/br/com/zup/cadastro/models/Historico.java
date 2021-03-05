@@ -6,9 +6,25 @@ import java.util.List;
 
 public class Historico {
 
-    LocalDate dataDoRegistro;
-    String notaHistorico;
+    private LocalDate dataDoRegistro;
+    private String notaHistorico;
 
-    private static
-    List<Historico> listarPacientes = new ArrayList<>();
+    public Historico() {
+    }
+
+    public LocalDate getDataDoRegistro() {
+        return dataDoRegistro;
+    }
+
+    public void setDataDoRegistro(LocalDate dataDoRegistro) {
+        this.dataDoRegistro = dataDoRegistro;
+    }
+
+    public String getNotaHistorico() {
+        return notaHistorico;
+    }
+
+    public void setNotaHistorico(String notaHistorico) {
+        this.notaHistorico = notaHistorico;
+    }
 }
