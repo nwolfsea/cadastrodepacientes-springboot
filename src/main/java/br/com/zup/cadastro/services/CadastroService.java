@@ -1,6 +1,7 @@
 package br.com.zup.cadastro.services;
 
 import br.com.zup.cadastro.models.Cadastro;
+import br.com.zup.cadastro.models.Historico;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -26,4 +27,6 @@ public class CadastroService {
         }
         return null;
     }
+
+
 }

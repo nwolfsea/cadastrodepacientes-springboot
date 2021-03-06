@@ -1,6 +1,8 @@
 package br.com.zup.cadastro.models;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConsultaMedica {
     private String paciente;
@@ -8,6 +10,11 @@ public class ConsultaMedica {
     private String tipoDaConsulta;
 
     public ConsultaMedica() {
+    }
+
+    List<ConsultaMedica> consultaMedicas = new ArrayList<>();
+
+    public static void deletarConsulta(String nome) {
     }
 
     public String getPaciente() {
@@ -35,5 +42,8 @@ public class ConsultaMedica {
     }
 
     public void adicionarConsulta(ConsultaMedica consultaMedica) {
+    }
+    
+    private void pesquisarConsultaMedica(String nome) {
     }
 }
