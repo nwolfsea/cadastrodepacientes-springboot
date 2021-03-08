@@ -10,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 
 @RestController
-@RequestMapping("/cadastro/")
+@RequestMapping("cadastro/")
 public class CadastroController {
 
     @Autowired

@@ -55,8 +55,4 @@ public class CadastroService {
         }
         throw new RuntimeException("O paciente com CPF " + cadastro.getCpf() + "já está cadastrado");
     }
-
-
-
-
 }
