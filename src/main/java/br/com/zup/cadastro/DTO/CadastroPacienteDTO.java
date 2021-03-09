@@ -1,14 +1,22 @@
 package br.com.zup.cadastro.DTO;
 
 import br.com.zup.cadastro.models.Cadastro;
+import org.hibernate.validator.constraints.br.CPF;
 
-public class CadastroDTO {
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
 
+public class CadastroPacienteDTO {
+
+    @Email(message = "email inválido")
+    private String email;
     private String nome;
+    @Min(message = "Idade mínima 18 anos", value = 18)
     private int idade;
+    @CPF(message = "CPF inválido")
     private String cpf;
 
-    public CadastroDTO() {
+    public CadastroPacienteDTO() {
     }
 
     public String getNome() {
@@ -35,11 +43,11 @@ public class CadastroDTO {
         this.cpf = cpf;
     }
 
-    public static Cadastro converterDTOParaCadastro(CadastroDTO cadastroDTO){
+    public Cadastro converterDTOParaCadastro(){
         Cadastro cadastro = new Cadastro();
-        cadastro.setNome(cadastroDTO.getNome());
-        cadastro.setCpf(cadastroDTO.getCpf());
-        cadastro.setIdade(cadastroDTO.getIdade());
+        cadastro.setNome(this.nome);
+        cadastro.setCpf(this.cpf);
+        cadastro.setIdade(this.idade);
 
         return cadastro;
     }

@@ -1,6 +1,7 @@
 package br.com.zup.cadastro.models;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cadastro{
@@ -42,5 +43,8 @@ public class Cadastro{
 
     public void setHistoricos(List<Historico> historicos) {
         this.historicos = historicos;
+    }
+
+    public void setHistorico(ArrayList<Object> objects) {
     }
 }

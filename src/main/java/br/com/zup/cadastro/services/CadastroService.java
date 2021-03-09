@@ -1,5 +1,6 @@
 package br.com.zup.cadastro.services;
 
+import br.com.zup.cadastro.exceptions.CadastroNaoEncontradoException;
 import br.com.zup.cadastro.models.Cadastro;
 import br.com.zup.cadastro.models.Historico;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ public class CadastroService {
     @Autowired
     private HistoricoService historicoService;
 
+
     public Cadastro cadastrar(Cadastro cadastro) throws RuntimeException{
         if(!cadastros.contains(cadastros)){
             cadastros.add(cadastro);
@@ -26,7 +28,7 @@ public class CadastroService {
     public Cadastro cadastrarHistorico(String cpf, Historico historico) throws RuntimeException {
         for(Cadastro cadastro : cadastros){
             if (cadastro.getCpf().equalsIgnoreCase(cpf)) {
-                historicoService.cadastrar(cadastro, historico);
+                historicoService.registrarHistorico(cpf, historico);
                 return cadastro;
             }
         }
@@ -53,6 +55,14 @@ public class CadastroService {
                 return cadastro1;
             }
         }
-        throw new RuntimeException("O paciente com CPF " + cadastro.getCpf() + "já está cadastrado");
+        throw new CadastroNaoEncontradoException("O paciente com CPF " + cadastro.getCpf() + "já está cadastrado");
     }
+
+    public Cadastro salvarCadastro(Cadastro cadastro){
+        cadastros.add(cadastro);
+        cadastro.setHistorico(new ArrayList<>());
+        return cadastro;
+    }
+
+
 }
